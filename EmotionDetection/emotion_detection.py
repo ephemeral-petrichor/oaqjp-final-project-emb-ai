@@ -1,10 +1,14 @@
 """Emotion detection using the Watson NLP EmotionPredict service."""
 
 import json
+import os
 
 import requests
 
-EMOTION_URL = "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict"
+EMOTION_URL = os.getenv(
+    "EMOTION_URL",
+    "https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict",
+)
 
 
 def emotion_detector(text_to_analyze):
