@@ -14,6 +14,9 @@ def sent_analyzer():
 
     response = emotion_detector(text_to_analyze)
 
+    if response["dominant_emotion"] is None:
+        return "¡Texto inválido! ¡Por favor, intenta de nuevo!"
+
     anger = response["anger"]
     disgust = response["disgust"]
     fear = response["fear"]
